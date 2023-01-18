@@ -1,0 +1,106 @@
+.App {
+  text-align: center;
+  display: flex;
+  background-color: black;
+  height: 100vh;
+}
+
+.side-menu {
+  width: 270px;
+  background-color: rgb(56, 53, 53);
+  color: white;
+  padding: 4px;
+}
+
+.chat-area {
+  flex: 1;
+  position: relative;
+  overflow: scroll;
+  overflow-y: scroll;
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;     /* Firefox */
+}
+.chat-area::-webkit-scrollbar { 
+  display: none;          /* Safari and Chrome */
+}
+
+.new-chat-btn {
+  padding: 15px;
+  border: 1px solid white;
+  border-radius: 6px;
+}
+
+.new-chat-btn:hover {
+  background-color: rgba(216, 189, 189, 0.525);
+}
+
+.chat-input-holder{
+  padding: 14px;
+  width: 90%;
+  position: absolute;
+  bottom:0;left:0;right:0;
+  margin: auto;
+}
+
+.chat-input-box{
+  background-color: rgb(30, 26, 26);
+  width: 100%;
+  border-radius: 5px;
+  border-color: none;
+  border: none;
+  margin: 14px;
+  outline: none;
+  box-shadow: 0 0 6px 6px rgba(23, 22, 22, 0.621);
+  color: whitesmoke;
+  padding: 12px;
+  font-size: 1.3em;
+}
+
+.chat-log{
+  padding: 28px;
+  text-align: left;
+  
+}
+
+.chat-msg{
+  display: flex;
+  padding: 14px;
+  margin: 8px;
+  max-width: 76%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgb(245, 235, 235);
+  border-radius: 6px;
+}
+
+.avatar{
+  background: white;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+}
+
+.message{
+  padding: 0px 22px;
+}
+
+.chat-msg.bot{
+  background-color: rgb(170, 158, 158);
+}
+
+.avatar.bot{
+  background-color: green;
+}
+
+.models{
+  padding: 6px;
+  margin-top: 12px;
+}
+
+.models select{
+  background-color: rgb(31, 31, 31);
+  color: white;
+  height: 42px;
+  border-radius: 6px;
+  border-style: none;
+}
