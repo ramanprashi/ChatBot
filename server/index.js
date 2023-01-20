@@ -8,7 +8,7 @@ const cors = require('cors')
 
 const configuration = new Configuration({
     organization: "org-xYrfvigkDRDqL5VqiuDkctXk",
-    apiKey: "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",
+    apiKey: "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",
 });
 const openai = new OpenAIApi(configuration);
 
@@ -23,28 +23,31 @@ const openai = new OpenAIApi(configuration);
 } */
 
 
+
 const app = express()
-app.use(express.json())
+app.use(bodyParser.json())
 app.use(cors())
 const port = 3080
 
 app.post('/', async (req,res) => {
-    const { message, currentModel } = req.body;
+    const { message, currentModel, currentTemperature, currentToken } = req.body;
+    const lastMessage = message[message.length - 1];
     const response = await openai.createCompletion({
         model: `${currentModel}`,
-        prompt: `${message}`,
-        max_tokens: 100,
-        temperature: 0.5,
+        prompt: `${lastMessage}`,
+        max_tokens: JSON.parse(currentToken),
+        temperature: JSON.parse(currentTemperature),
     });
     res.json({
         message: response.data.choices[0].text,
     })
+    
 });
 
 app.get('/models', async (req,res) => {
     const response = await openai.listEngines();
     res.json({
-        models: response.data.data
+        models: response.data.data,
     })
 });
 

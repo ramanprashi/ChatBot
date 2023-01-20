@@ -1,19 +1,22 @@
 .App {
   text-align: center;
   display: flex;
-  background-color: black;
+  background-color: rgb(37, 37, 37);
   height: 100vh;
 }
 
 .side-menu {
-  width: 270px;
+  max-width: 300px;
   background-color: rgb(56, 53, 53);
   color: white;
-  padding: 4px;
+  padding: 8px;
+  padding-top: 18px;
 }
 
 .chat-area {
   flex: 1;
+  display: flex;
+  justify-content: space-between;
   position: relative;
   overflow: scroll;
   overflow-y: scroll;
@@ -34,23 +37,22 @@
   background-color: rgba(216, 189, 189, 0.525);
 }
 
+
 .chat-input-holder{
-  padding: 14px;
-  width: 90%;
+  width: 100%;
   position: absolute;
   bottom:0;left:0;right:0;
-  margin: auto;
 }
 
 .chat-input-box{
   background-color: rgb(30, 26, 26);
-  width: 100%;
+  width: 80%;
   border-radius: 5px;
   border-color: none;
   border: none;
   margin: 14px;
   outline: none;
-  box-shadow: 0 0 6px 6px rgba(23, 22, 22, 0.621);
+  box-shadow: 0 0 14px 14px rgba(23, 22, 22, 0);
   color: whitesmoke;
   padding: 12px;
   font-size: 1.3em;
@@ -58,24 +60,39 @@
 
 .chat-log{
   padding: 28px;
+  padding-bottom: 120px;
   text-align: left;
-  
+  overflow-y: scroll;
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;     /* Firefox */
 }
+.chat-log::-webkit-scrollbar { 
+  display: none;          /* Safari and Chrome */
+}
+
 
 .chat-msg{
   display: flex;
-  padding: 14px;
-  margin: 8px;
-  max-width: 76%;
+  padding: 16px;
+  margin: 14px;
+  min-width: 76%;
+  width: 76%;
+  max-width: 80%;
   margin-left: auto;
   margin-right: auto;
-  background-color: rgb(245, 235, 235);
+  background-color: rgba(56, 51, 51, 0.236);
   border-radius: 6px;
+  box-shadow: 12px 12px 14px  rgba(21, 20, 20, 0.305);
+  color: rgb(194, 194, 194);
+  font-size: 1.1em;
+  font-weight: 600;
 }
 
 .avatar{
   background: white;
   border-radius: 50%;
+  min-height: 40px;
+  min-width: 40px;
   height: 40px;
   width: 40px;
 }
@@ -85,22 +102,116 @@
 }
 
 .chat-msg.bot{
-  background-color: rgb(170, 158, 158);
+  background-color: rgb(133, 133, 133);
+  color: rgb(24, 24, 24);  
+  min-width: 78%;
+  width: 78%;
 }
 
 .avatar.bot{
   background-color: green;
+  border-radius: 50%;
+  min-height: 40px;
+  min-width: 40px;
+  height: 40px;
+  width: 40px;
 }
 
 .models{
   padding: 6px;
-  margin-top: 12px;
+  margin-top: 24px;
+  margin-bottom: 14px;
+  background-color: rgba(44, 44, 44, 0.734);
+  border-radius: 8px;
+}
+
+.models label{
+  font-size: 1.2em;
 }
 
 .models select{
-  background-color: rgb(31, 31, 31);
+  background-color: rgb(35, 35, 35);
   color: white;
   height: 42px;
   border-radius: 6px;
   border-style: none;
+  text-align: center;
+  margin: 6px 0px;
+}
+
+.temperature{
+  padding: 6px;
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(44, 44, 44, 0.734);
+  border-radius: 8px;
+}
+
+.temperature label{
+  font-size: 1.2em;
+}
+
+.temperature select{
+  background-color: inherit;
+  color: white;
+  height: 42px;
+  border-radius: 6px;
+  text-align: center;
+  border-style: none;
+}
+
+.token{
+  padding: 6px;
+  margin-top: 12px;
+  display: flex;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgba(44, 44, 44, 0.734);
+  border-radius: 8px;
+}
+
+.token label{
+  font-size: 1.2em;
+  
+}
+
+.token select{
+  background-color: inherit;
+  color: white;
+  height: 42px;
+  border-radius: 6px;
+  border-style: none;
+  text-align: center;
+}
+
+.user-guide{
+  text-align: left;
+  padding-top: 22px;
+  font-size: 1.2em;
+}
+.user-guide li{
+  padding: 5px;
+}
+
+.user-guide a{
+  text-decoration: none;
+  color:rgb(100, 100, 100);
+}
+.user-guide a:hover{
+  color:rgb(192, 219, 210);
+}
+
+
+
+
+@media only screen and (max-width: 768px) {
+  aside {
+    display: none;
+  }
+  .expand-button {
+    display: block;
+  }
 }
