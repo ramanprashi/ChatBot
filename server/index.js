@@ -49,7 +49,6 @@ app.get('/models', async (req,res) => {
     const response = await openai.listEngines();
     res.json({
         models: response.data.data,
-        message: "its working",
     })
 });
 
