@@ -28,7 +28,7 @@ const openai = new OpenAIApi(configuration);
 const app = express()
 app.use(bodyParser.json())
 app.use(cors())
-const port = 3080
+const port = process.env.PORT || 5050
 
 app.post('/', async (req,res) => {
     const { message, currentModel, currentTemperature, currentToken } = req.body;
@@ -53,5 +53,5 @@ app.get('/models', async (req,res) => {
 });
 
 app.listen(port, () => {
-    console.log(`example app listening at http://localhost:${port}`)
+    console.log(`example app listening at http://localhost:${process.env.PORT}`)
 });
