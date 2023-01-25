@@ -9,8 +9,6 @@ function App() {
     getEngines();
   },[])
 
- 
-
   const [input, setInput] = useState("")
   const [chatlog, setChatlog] = useState([{user:"gpt",message: "How can i help you today?"}])
   const [models, setModels] = useState([])
@@ -19,6 +17,7 @@ function App() {
   const [currentTemperature, setCurrentTemperature] = useState(0.7)
   const tokens = [5,10,50,100,200,300,400,500,1000,2000]
   const [currentToken, setCurrentToken] = useState(100)
+  
 
   useEffect(() => {
     scrollToEnd()
