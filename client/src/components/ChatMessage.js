@@ -7,7 +7,7 @@ const ChatMessage = ({message}) => {
             <div className={`avatar ${message.user === "gpt" && "bot" }`}>
                 <img src={`../assets/${message.user === "gpt" ? "bot.jpeg" : "user.jpeg"}`} alt='profile-icon' width="40px" height="40px"/>
             </div>
-            <div className="message">{message.message}</div>
+            <div className="message"><pre>{message.message}</pre></div>
         </div>
     )
 }

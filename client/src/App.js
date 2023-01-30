@@ -61,7 +61,8 @@ function App() {
       })
     });
     const data = await response.json();
-    setChatlog([...chatlogNew, {user: "gpt", message: `${data.message}`}])
+    console.log(data.message.replace('/n'));
+    setChatlog([...chatlogNew, {user: "gpt", message: `${data.message.replace('/n')}`}])
     
   }
 
