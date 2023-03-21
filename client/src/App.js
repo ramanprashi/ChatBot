@@ -52,7 +52,7 @@ function App() {
     setInput("");
     setChatlog(chatlogNew);
     const messages = chatlogNew.map((message) => message.message)
-    const response = await fetch("https://react-chatgpt-server.vercel.app/", {
+    const response = await fetch("https://gpt-chatbot-server.vercel.app/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
